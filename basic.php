@@ -16,12 +16,6 @@ $xmlstr = <<<XML
 XML;
 
 
-$xml = new SimpleXMLElement($xmlstr);
-
-var_dump($xml->data);
-
-
-
 
 libxml_use_internal_errors(true);
 
