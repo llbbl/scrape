@@ -18,5 +18,23 @@ XML;
 
 $xml = new SimpleXMLElement($xmlstr);
 
-echo $xml->data;
+var_dump($xml->data);
 
+
+
+
+libxml_use_internal_errors(true);
+
+$dom = new DOMDocument();
+$dom->loadXML($xmlstr);
+
+var_dump($dom->textContent);
+
+
+
+$result = $dom->getElementsByTagName('data');
+
+foreach($result as $row)
+{
+    var_dump($row->nodeValue);
+}
